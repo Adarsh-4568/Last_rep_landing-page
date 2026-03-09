@@ -572,7 +572,9 @@ function submitEmail(inputId, successId) {
     setTimeout(() => { input.style.borderColor = ''; input.placeholder = 'your@email.com'; }, 2000);
     return;
   }
-  input.parentElement.style.display = 'none';
+  const beehiivUrl = 'https://magic.beehiiv.com/v1/3e7ac0ac-2d3e-4d07-b814-cdb100ec55c4?email=' + encodeURIComponent(email);
+  window.open(beehiivUrl, '_blank');
+  input.closest('.waitlist-form, .final-form').style.display = 'none';
   success.style.display = 'block';
 }
 
